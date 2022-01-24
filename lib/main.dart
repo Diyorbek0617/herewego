@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:herewego/pages/home_page.dart';
+import 'package:herewego/pages/signin_page.dart';
+import 'package:herewego/pages/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,37 +11,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Firebase setting',
+      title: 'Firebase demo',
 
-      home: Home_page(),
-    );
-  }
-}
-class Home_page extends StatefulWidget {
-  const Home_page({Key? key}) : super(key: key);
-
-  @override
-  _Home_pageState createState() => _Home_pageState();
-}
-
-class _Home_pageState extends State<Home_page> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("Firebase setting",style: TextStyle(color: Colors.black,fontSize: 30),),
-        centerTitle: true,
-      ),
-      body: Container(
-        child: Center(
-          child: Text("Welcome",style: TextStyle(color: Colors.black,fontSize: 25),),
-        ),
-      ),
+      home: Sign_up(),
+      routes: {
+        Home_page.id:(context)=>Home_page(),
+        Sign_in.id:(context)=>Sign_in(),
+        Sign_up.id:(context)=>Sign_up(),
+      },
     );
   }
 }
