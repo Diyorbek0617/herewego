@@ -15,22 +15,22 @@ static Future<FirebaseUser> signInUser(BuildContext context, String email,String
     return user;
 
   }catch(e){
-print(e);
+print(e.toString());
   }
-return null!;
+return null;
 
 }
 
 static Future<FirebaseUser> signUpUser(BuildContext context,String name,String email,String password)async{
   try{
     var authResult = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-    FirebaseUser user =authResult.user;
+    FirebaseUser user = authResult.user;
     print(user.toString());
     return user;
   }catch(e){
-    print(e);
+    print(e.toString());
   }
-  return null!;
+  return null;
 }
 
 static void signOutUser(BuildContext context){

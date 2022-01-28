@@ -10,7 +10,7 @@ static Future<Stream<Event>>addPost(Post post)async{
 }
 
 static Future<List<Post>>getPosts(String id)async{
-  List<Post> items =[];
+  List<Post> items=[];
   Query _query =_database.reference().child("posts").orderByChild("userId").equalTo(id);
   var snapshot =await _query.once();
   var result =snapshot.value.values as Iterable;

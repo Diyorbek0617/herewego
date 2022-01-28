@@ -7,7 +7,7 @@ import 'package:herewego/services/prefs_service.dart';
 import 'package:herewego/services/utills_service.dart';
 
 class Sign_in extends StatefulWidget {
-  const Sign_in({Key? key}) : super(key: key);
+  const Sign_in({Key key}) : super(key: key);
 static final String id="signin_page";
 
   @override

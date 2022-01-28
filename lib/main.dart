@@ -8,17 +8,17 @@ import 'package:herewego/pages/signup_page.dart';
 import 'package:herewego/services/prefs_service.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 Widget _strartPage(){
   return StreamBuilder<FirebaseUser>(
     stream: FirebaseAuth.instance.onAuthStateChanged,
     builder: (BuildContext context,snapshot){
       if(snapshot.hasData){
-        Prefs.saveUserId(snapshot.data!.uid);
+        Prefs.saveUserId(snapshot.data.uid);
         return Home_page();
       }else{
         Prefs.removeUserId();
