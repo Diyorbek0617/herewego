@@ -96,7 +96,7 @@ _respPosts(List<Post>posts){
             width: MediaQuery.of(context).size.width,
             child: post.img_url != null ?
             Image.network(post.img_url,fit: BoxFit.cover,):
-            Image.asset("assets/images/ic_default.png",fit: BoxFit.cover,),
+            Image.asset("assets/images/ic_default.png",),
           ),
           SizedBox(width: 15,),
           // text post fullname
